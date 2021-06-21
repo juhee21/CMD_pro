@@ -2,12 +2,15 @@ package com.CMD.CMD_pro.controller;
 
 import com.CMD.CMD_pro.domain.UserVO;
 import com.CMD.CMD_pro.mapper.UserMapper;
+import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.XSlf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Slf4j
 @Controller
 public class UserController {
     @Autowired
@@ -29,6 +32,7 @@ public class UserController {
         user.setUser_email(form.getUser_email());
         user.setUser_gender(form.getUser_gender());
         userMapper.userJoin(user);
+        log.info("test 주희");
         return "redirect:/join";
     }
 
